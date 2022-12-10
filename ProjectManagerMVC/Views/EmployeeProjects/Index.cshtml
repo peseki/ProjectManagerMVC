@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ProjectManagerMVC.Models.EmployeeProject>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="CreateProjectEmployee">Assign</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.Email)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.ProjectName)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

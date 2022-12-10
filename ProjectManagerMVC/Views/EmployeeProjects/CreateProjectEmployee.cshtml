@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "CreateProjectEmployee";
+}
+
+<h1>CreateProjectEmployee</h1>
+
+<form action="/EmployeeProjects/CreateProjectEmployee" method="post">
+
+Project ID @Html.DropDownList("ProjectID")
+
+<ul>
+    @foreach(var employee in ViewBag.EmployeeID)
+    {
+        <li> <input type="checkbox" name="EmployeeID" value="@employee.EmployeeID" /> @employee.Email </li>
+
+    }
+</ul>
+
+<input type="submit" value="Assign Project Employee" />
+
+</form>
